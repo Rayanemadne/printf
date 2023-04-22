@@ -18,19 +18,24 @@ int mixer(const char *format, convert_t f_list[], va_list arg_list)
 	/*loop through every caracter in the main string*/
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		/*loop through every symbol of the list*/
-		for (j = 0; f_list[j].symbol != NULL; j++)
+		/*check if the format is % */
+		if (format[i] == '%')
 		{
-			/*check if format == list symbol*/
-			if (format[i] == f_list[j].symbol[0])
+			/*loop through every symbol of the list*/
+			for (j = 0; f_list[j].symbol != NULL; j++)
 			{
-				tmp = f_list[j].f(arg_list);
-				if (tmp == -1)
-					return (-1);
-				total_printed += tmp;
-				break; /*exit the loop*/
+				/*check if format == list symbol*/
+				if (format[i + 1] == f_list[j].symbol[0])
+				{
+					tmp = f_list[j].f(arg_list);
+					if (tmp == -1)
+						return (-1);
+					total_printed += tmp;
+					break; /*exit the loop*/
+				}
 			}
 		}
+
 	}
 
 	return (total_printed);

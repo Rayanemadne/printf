@@ -17,8 +17,9 @@ int _printf(const char *format, ...)
 	convert_t list_f[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"%", print_percent}
+		{"%", print_percent},
 		/* ----- add the symbol with function here----*/
+		{NULL, NULL}
 	};
 
 	/*get the arguments ... */
