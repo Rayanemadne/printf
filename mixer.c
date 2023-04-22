@@ -31,9 +31,15 @@ int mixer(const char *format, convert_t f_list[], va_list arg_list)
 					if (tmp == -1)
 						return (-1);
 					total_printed += tmp;
+					i++;/*skipping the format*/
 					break; /*exit the loop*/
 				}
 			}
+		}
+		else /*if is a normal caratere*/
+		{
+			_putchar(format[i]);
+			total_printed++;
 		}
 
 	}
