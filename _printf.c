@@ -33,6 +33,6 @@ int _printf(const char *format, ...)
 	va_end(args);
 
 	/*return A total count of the characters printed*/
-	printf("\n the total of cracter printed : %d", total_printed);
+	/* printf("\n the total of cracter printed : %d", total_printed); */
 	return (total_printed);
 }
