@@ -18,8 +18,6 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
-		{"d", print_interger},
-		{"i", print_interget},
 		/* ----- add the symbol with function here----*/
 		{NULL, NULL}
 	};
