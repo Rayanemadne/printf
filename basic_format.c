@@ -55,7 +55,7 @@ int print_percent(__attribute__((unused))va_list list)
 /**
  * print_interger - Prints a integer
  * @list: list of argument
- * Return: characters printed
+ * Return: 1 characters printed
  */
 int _ printf(const char *format, ...)
 {
@@ -65,15 +65,6 @@ int _ printf(const char *format, ...)
 		 {"d", print_integer},
 		 {"i", print_integer},
 		 {NULL, NULL}
-};
-va_list args;
-
-	if (format == NULL)
-		return (-1);
-
-	va_start(args, format);
-	printed_char = mixer(format, list_f, args);
-	va_end(args);
-
-	return (printed_char);
+	 }
+	 return (1);
 }
