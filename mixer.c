@@ -12,7 +12,7 @@
 
 int mixer(const char *format, convert_t f_list[], va_list arg_list)
 {
-	int total_printed;
+	int total_printed = 0;
 	int i, j, tmp = 0;
 
 	/*loop through every caracter in the main string*/
