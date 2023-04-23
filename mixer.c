@@ -17,11 +17,9 @@ int mixer(const char *format, convert_t f_list[], va_list arg_list)
 
 	/*loop through every caracter in the main string*/
 	for (i = 0; format[i] != '\0'; i++)
-	{
-		/*check if the format is % */
+	{ /*check if the format is % */
 		if (format[i] == '%')
-		{
-			/*loop through every symbol of the list*/
+		{ /*loop through every symbol of the list*/
 			for (j = 0; f_list[j].symbol != NULL; j++)
 			{
 				/*check if format == list symbol*/
@@ -34,6 +32,17 @@ int mixer(const char *format, convert_t f_list[], va_list arg_list)
 					break; /*exit the loop*/
 				}
 			}
+			if (f_list[j].symbol == NULL && format[i + 1] != ' ')
+			{ /*if no symbol found print the % and the nex char normal*/
+				if (format[i + 1] != '\0')
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					total_printed = total_printed + 2;
+				}
+				else
+					return (-1);
+			}
 			i++;/*skipping the format*/
 		}
 		else /*if is a normal caratere*/
@@ -41,8 +50,6 @@ int mixer(const char *format, convert_t f_list[], va_list arg_list)
 			_putchar(format[i]);
 			total_printed++;
 		}
-
 	}
-
 	return (total_printed);
 }
