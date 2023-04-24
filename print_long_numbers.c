@@ -1,5 +1,6 @@
 #include "main.h"
 
+/* Liyah Louis - Rayane Madoune */
 /**
  * print_long_number - putchar numbers
  * @list: get the list of argument

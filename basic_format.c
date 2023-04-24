@@ -65,3 +65,23 @@ int print_integer(va_list list)
 	return (num_len);
 }
 
+/**
+ * print_binary - print the binary of an unsigned int
+ * @list: get the list argument
+ * @b: unsigned int
+ *
+ * Return: unsigned binary
+ */
+int print_bin(va_list list)
+{
+	unsigned int b
+
+	int b = 0;
+
+	if (b / 2)
+		b += print_bin(b / 2);
+	b += _putchar(b % 2 + '0');
+
+	return (b);
+}
+
