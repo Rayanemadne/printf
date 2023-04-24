@@ -72,16 +72,15 @@ int print_integer(va_list list)
  *
  * Return: unsigned binary
  */
-int print_bin(va_list list)
+int main(void)
 {
-	unsigned int b
+	unsigned int n
 
-	int b = 0;
+	int cmp = 0;
 
-	if (b / 2)
-		b += print_bin(b / 2);
-	b += _putchar(b % 2 + '0');
+	if (n / 2)
+		cmp += _print_bin(n / 2);
+	cmp += _putchar(n % 2 + '0');
 
-	return (b);
+	return (cmp);
 }
-
