@@ -3,53 +3,12 @@
 /* Liyah Louis - Rayane Madoune */
 
 /**
- * print_binary - convert to base 2
- * @list: List of arguments
- * Return: (the amount of characters printed)
-*/
-
-int print_binary(va_list list)
-{
-	unsigned int num;
-	int i, len;
-	char *str;
-	char *rev_str;
-
-	num = va_arg(list, unsigned int);
-	if (num == 0)
-		return (_putchar('0'));
-	if (num < 1)
-		return (-1);
-	len = base_lenght(num, 2);
-	str = malloc(sizeof(char) * len + 1);
-	if (str == NULL)
-		return (-1);
-
-	for (i = 0; num > 0; i++)
-	{
-		if (num % 2 == 0)
-			str[i] = '0';
-		else
-			str[i] = '1';
-		num = num / 2;
-	}
-	str[i] = '\0';
-	rev_str = rev_string(str);
-	if (rev_str == NULL)
-		return (-1);
-	putchar_base(rev_str);
-	free(str);
-	free(rev_str);
-	return (len);
-}
-
-/**
- * rev_str - reverses a string
+ * rev_string - reverses a string
  *
  * @s: string
  * Return: pointer
 */
-char *rev_str(char *s)
+char *rev_string(char *s)
 {
 	int len;
 	int head;
@@ -100,4 +59,45 @@ unsigned int base_lenght(unsigned int num, int base)
 		num = num / base;
 	}
 	return (i);
+}
+
+/**
+ * print_binary - convert to base 2
+ * @list: List of arguments
+ * Return: (the amount of characters printed)
+*/
+
+int print_binary(va_list list)
+{
+	unsigned int num;
+	int i, len;
+	char *str;
+	char *rev_str;
+
+	num = va_arg(list, unsigned int);
+	if (num == 0)
+		return (_putchar('0'));
+	if (num < 1)
+		return (-1);
+	len = base_lenght(num, 2);
+	str = malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (-1);
+
+	for (i = 0; num > 0; i++)
+	{
+		if (num % 2 == 0)
+			str[i] = '0';
+		else
+			str[i] = '1';
+		num = num / 2;
+	}
+	str[i] = '\0';
+	rev_str = rev_string(str);
+	if (rev_str == NULL)
+		return (-1);
+	putchar_base(rev_str);
+	free(str);
+	free(rev_str);
+	return (len);
 }
