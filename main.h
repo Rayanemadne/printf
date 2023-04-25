@@ -32,6 +32,9 @@ int mixer(const char *format, convert_t f_list[], va_list arg_list);
 
 /*basic function*/
 int _putchar(char c);
+char *rev_str(char *s);
+void putchar_base(char *str);
+unsigned int base_lenght(unsigned int num, int base);
 
 /*format function*/
 int print_char(va_list list);
@@ -39,5 +42,6 @@ int print_string(va_list list);
 int print_percent(__attribute__((unused))va_list list);
 int print_integer(va_list list);
 int print_long_number(va_list list);
+int print_binary(va_list list);
 
 #endif

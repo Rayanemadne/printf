@@ -64,23 +64,3 @@ int print_integer(va_list list)
 	num_len = print_long_number(list);
 	return (num_len);
 }
-
-/**
- * print_binary - print the binary of an unsigned int
- * @list: get the list argument
- * @b: unsigned int
- *
- * Return: unsigned binary
- */
-int main(void)
-{
-	unsigned int n
-
-	int cmp = 0;
-
-	if (n / 2)
-		cmp += _print_bin(n / 2);
-	cmp += _putchar(n % 2 + '0');
-
-	return (cmp);
-}
